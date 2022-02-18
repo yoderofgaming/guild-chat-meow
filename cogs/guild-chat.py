@@ -43,7 +43,7 @@ class GuildChat(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message) -> None:
-        if message.author.bot or message.channel.id != GUILD_CHAT_CHANNEL:
+        if message.channel.id != GUILD_CHAT_CHANNEL:
             return
         if len(message.clean_content) <= 150:
             text = message.clean_content
